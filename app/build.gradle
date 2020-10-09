@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.shivamkumarjha.retrofitbase"
+        applicationId "com.shivamkumarjha.oneplusfirmware"
         minSdkVersion 21
         targetSdkVersion 30
         multiDexEnabled true

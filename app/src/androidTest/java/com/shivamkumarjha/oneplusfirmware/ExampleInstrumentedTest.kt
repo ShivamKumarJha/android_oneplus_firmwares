@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.shivamkumarjha.retrofitbase", appContext.packageName)
+        assertEquals("com.shivamkumarjha.oneplusfirmware", appContext.packageName)
     }
 }
