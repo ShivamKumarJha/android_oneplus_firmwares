@@ -39,7 +39,7 @@ class PhoneViewHolder(
     fun initialize(phoneInfo: InfoData) {
         this.phoneInfo = phoneInfo
         phoneName.text = phoneInfo.phoneName
-        phoneROMVersion.text = "Version" + phoneInfo.versionNo
+        phoneROMVersion.text = "Version: " + phoneInfo.versionNo
         phoneROMDate.text = "Date " + phoneInfo.versionReleaseTime
         phoneROMSize.text = "Size " + phoneInfo.versionSize
         phoneROMMD5.text = "MD5 " + phoneInfo.versionSign

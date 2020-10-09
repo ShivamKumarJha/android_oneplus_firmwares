@@ -9,4 +9,6 @@
     <string name="phone_rom_size">Phone ROM size</string>
     <string name="phone_rom_md5">Phone ROM MD5</string>
     <string name="copied">Link copied to clipboard</string>
+    <string name="search_phone">Search phone</string>
+    <string name="search">Search</string>
 </resources>

@@ -2,8 +2,14 @@ package com.shivamkumarjha.oneplusfirmware.ui.main
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +21,7 @@ import com.shivamkumarjha.oneplusfirmware.ui.dialog.ProgressDialog
 import com.shivamkumarjha.oneplusfirmware.ui.main.adapter.PhoneAdapter
 import com.shivamkumarjha.oneplusfirmware.ui.main.adapter.PhoneClickListener
 import com.shivamkumarjha.oneplusfirmware.utility.Utility
+import com.shivamkumarjha.oneplusfirmware.utility.hideKeyboard
 
 class MainActivity : AppCompatActivity() {
 
@@ -123,5 +130,32 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        val search: MenuItem = menu.findItem(R.id.search_id)
+        val searchView: SearchView = search.actionView as SearchView
+        val searchIcon = searchView.findViewById<ImageView>(R.id.search_mag_icon)
+        searchIcon.setColorFilter(Color.WHITE)
+        val cancelIcon = searchView.findViewById<ImageView>(R.id.search_close_btn)
+        cancelIcon.setColorFilter(Color.WHITE)
+        val searchTextView = searchView.findViewById<TextView>(R.id.search_src_text)
+        searchTextView.setTextColor(Color.WHITE)
+        searchTextView.hint = resources.getString(R.string.search_phone)
+        searchTextView.setHintTextColor(ContextCompat.getColor(this, R.color.white))
+        searchView.queryHint = resources.getString(R.string.search_phone)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                hideKeyboard()
+                return false
+            }
+
+            override fun onQueryTextChange(filter: String?): Boolean {
+                phoneAdapter.filter.filter(filter)
+                return true
+            }
+        })
+        return super.onCreateOptionsMenu(menu)
     }
 }
