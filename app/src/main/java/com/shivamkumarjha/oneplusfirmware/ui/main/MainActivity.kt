@@ -52,9 +52,16 @@ class MainActivity : AppCompatActivity() {
         })
         mainViewModel.oneplusPhones.observe(this, {
             if (it != null) {
-                for (phone in it.data) {
-                    mainViewModel.getPhoneInfo(Constants.STORE_CODE, phone.phoneCode)
-                    Utility.get().debugToast(this, phone.phoneCode)
+                if (it.errCode != 1 && it.data != null) {
+                    for (phone in it.data) {
+                        mainViewModel.getPhoneInfo(Constants.STORE_CODE, phone.phoneCode)
+                    }
+                } else {
+                    Utility.get().getSnackBar(
+                        constraintLayout,
+                        "Failed! " + it.errMsg,
+                        Snackbar.LENGTH_LONG
+                    ).setBackgroundTint(Color.RED).show()
                 }
             }
         })
@@ -77,7 +84,17 @@ class MainActivity : AppCompatActivity() {
         })
         mainViewModel.phoneInfo.observe(this, {
             if (it != null) {
-                Utility.get().debugToast(this, it.toString())
+                if (it.errCode != 1 && it.data != null) {
+                    for (phone in it.data) {
+                        Utility.get().debugToast(this, phone.phoneCode)
+                    }
+                } else {
+                    Utility.get().getSnackBar(
+                        constraintLayout,
+                        "Failed! " + it.errMsg,
+                        Snackbar.LENGTH_LONG
+                    ).setBackgroundTint(Color.RED).show()
+                }
             }
         })
     }
