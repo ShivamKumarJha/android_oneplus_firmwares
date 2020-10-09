@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/oneplus_card_view_id"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/view_margin"
+    app:cardCornerRadius="@dimen/card_stroke_radius"
+    app:strokeWidth="@dimen/card_stroke_width">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/oneplus_image_view_id"
+            android:layout_width="@dimen/margin_0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:contentDescription="@string/phone_image"
+            android:padding="@dimen/card_image_padding"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="@dimen/margin_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_text_margin"
+            android:layout_marginTop="@dimen/view_margin"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/oneplus_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_name"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/oneplus_rom_version_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_margin"
+                android:text="@string/phone_rom_version"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textColor="@color/blue_grey_900"
+                android:textSize="@dimen/text_size_normal" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/oneplus_rom_date_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_rom_date"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textColor="@color/blue_grey_900"
+                android:textSize="@dimen/text_size_normal" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/oneplus_rom_size_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_rom_size"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textColor="@color/blue_grey_900"
+                android:textSize="@dimen/text_size_normal" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/oneplus_rom_md5_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_rom_md5"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textColor="@color/blue_grey_900"
+                android:textSize="@dimen/text_size_normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_text_margin"
+                android:layout_marginEnd="@dimen/view_margin"
+                android:layout_marginBottom="@dimen/view_text_margin"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/oneplus_copy_link_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_copy"
+                    android:contentDescription="@string/copy" />
+
+                <Button
+                    android:id="@+id/oneplus_rom_link_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_margin_large"
+                    android:background="@drawable/button_background"
+                    android:padding="@dimen/view_margin"
+                    android:text="@string/download"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

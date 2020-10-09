@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.shivamkumarjha.oneplusfirmware.model.PhoneInfo
 import com.shivamkumarjha.oneplusfirmware.model.OneplusPhones
+import com.shivamkumarjha.oneplusfirmware.model.PhoneInfo
 import com.shivamkumarjha.oneplusfirmware.network.ApiListener
 import com.shivamkumarjha.oneplusfirmware.network.ResponseState
 import com.shivamkumarjha.oneplusfirmware.repository.PhoneInfoRepository
