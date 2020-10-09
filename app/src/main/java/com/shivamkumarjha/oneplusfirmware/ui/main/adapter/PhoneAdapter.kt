@@ -32,7 +32,7 @@ class PhoneAdapter(private val phoneClickListener: PhoneClickListener) :
         phones.add(phone)
         phones.sortByDescending { it.versionReleaseTime }
         backupList = this.phones
-        notifyItemInserted(this.phones.size)
+        notifyDataSetChanged()
     }
 
     override fun getFilter(): Filter {
