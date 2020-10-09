@@ -4,7 +4,7 @@ import com.shivamkumarjha.oneplusfirmware.model.OneplusPhones
 import com.shivamkumarjha.oneplusfirmware.model.PhoneInfo
 import retrofit2.Call
 import retrofit2.Retrofit
-import retrofit2.http.GET
+import retrofit2.http.POST
 
 interface ApiService {
 
@@ -20,9 +20,9 @@ interface ApiService {
         }
     }
 
-    @GET("find-phone-models")
+    @POST("find-phone-models")
     fun getPhoneModels(): Call<OneplusPhones>
 
-    @GET("find-phone-systems")
+    @POST("find-phone-systems")
     fun getPhoneInfo(): Call<PhoneInfo>
 }
