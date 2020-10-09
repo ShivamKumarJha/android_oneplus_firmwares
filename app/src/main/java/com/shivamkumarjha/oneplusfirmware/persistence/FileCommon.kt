@@ -1,4 +1,4 @@
-package com.shivamkumarjha.retrofitbase.persistence
+package com.shivamkumarjha.oneplusfirmware.persistence
 
 import android.util.Log
 import kotlinx.coroutines.Dispatchers

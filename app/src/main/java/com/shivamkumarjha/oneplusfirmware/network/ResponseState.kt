@@ -1,4 +1,4 @@
-package com.shivamkumarjha.retrofitbase.network
+package com.shivamkumarjha.oneplusfirmware.network
 
 data class ResponseState(
     val isOffline: Any? = null,

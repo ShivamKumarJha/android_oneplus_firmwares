@@ -1,4 +1,4 @@
-package com.shivamkumarjha.retrofitbase.network
+package com.shivamkumarjha.oneplusfirmware.network
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -6,7 +6,7 @@ import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.shivamkumarjha.retrofitbase.BuildConfig
+import com.shivamkumarjha.oneplusfirmware.BuildConfig
 import okhttp3.Cache
 import okhttp3.ConnectionPool
 import okhttp3.OkHttpClient

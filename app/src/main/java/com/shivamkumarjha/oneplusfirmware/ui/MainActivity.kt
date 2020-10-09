@@ -1,8 +1,8 @@
-package com.shivamkumarjha.retrofitbase.ui
+package com.shivamkumarjha.oneplusfirmware.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.shivamkumarjha.retrofitbase.R
+import com.shivamkumarjha.oneplusfirmware.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

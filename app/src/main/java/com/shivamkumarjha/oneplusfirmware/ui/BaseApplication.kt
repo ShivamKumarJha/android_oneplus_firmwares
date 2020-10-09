@@ -1,11 +1,11 @@
-package com.shivamkumarjha.retrofitbase.ui
+package com.shivamkumarjha.oneplusfirmware.ui
 
 import android.app.Application
 import com.facebook.stetho.Stetho
-import com.shivamkumarjha.retrofitbase.BuildConfig
-import com.shivamkumarjha.retrofitbase.config.Constants
-import com.shivamkumarjha.retrofitbase.network.RetrofitClient
-import com.shivamkumarjha.retrofitbase.persistence.PreferenceManager
+import com.shivamkumarjha.oneplusfirmware.BuildConfig
+import com.shivamkumarjha.oneplusfirmware.config.Constants
+import com.shivamkumarjha.oneplusfirmware.network.RetrofitClient
+import com.shivamkumarjha.oneplusfirmware.persistence.PreferenceManager
 
 class BaseApplication : Application() {
     override fun onCreate() {

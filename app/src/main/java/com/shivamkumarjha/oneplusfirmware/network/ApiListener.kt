@@ -1,4 +1,4 @@
-package com.shivamkumarjha.retrofitbase.network
+package com.shivamkumarjha.oneplusfirmware.network
 
 interface ApiListener {
     fun onResponse(t: Any?)

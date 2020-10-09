@@ -1,4 +1,4 @@
-package com.shivamkumarjha.retrofitbase
+package com.shivamkumarjha.oneplusfirmware
 
 import org.junit.Test
 

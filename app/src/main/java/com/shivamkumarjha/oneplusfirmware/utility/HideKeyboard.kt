@@ -1,4 +1,4 @@
-package com.shivamkumarjha.retrofitbase.utility
+package com.shivamkumarjha.oneplusfirmware.utility
 
 import android.app.Activity
 import android.content.Context

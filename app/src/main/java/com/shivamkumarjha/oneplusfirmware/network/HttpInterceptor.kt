@@ -1,4 +1,4 @@
-package com.shivamkumarjha.retrofitbase.network
+package com.shivamkumarjha.oneplusfirmware.network
 
 import android.net.ConnectivityManager
 import okhttp3.Interceptor
