@@ -14,27 +14,28 @@ object PhoneInfoRepository {
 
     var phoneInfo: PhoneInfo? = null
 
-    suspend fun getPhoneInfo(apiListener: ApiListener) =
+    suspend fun getPhoneInfo(storeCode: String, phoneCode: String, apiListener: ApiListener) =
         withContext(Dispatchers.Default) {
-            ApiService.create().getPhoneInfo().enqueue(object : Callback<PhoneInfo> {
-                override fun onResponse(call: Call<PhoneInfo>, response: Response<PhoneInfo>?) {
-                    if (response != null) {
-                        if (response.code() == 200) {
-                            phoneInfo = response.body()
-                            apiListener.onResponse(response.body())
-                        } else
-                            apiListener.onResponseError(response.code())
+            ApiService.create().getPhoneInfo(storeCode, phoneCode)
+                .enqueue(object : Callback<PhoneInfo> {
+                    override fun onResponse(call: Call<PhoneInfo>, response: Response<PhoneInfo>?) {
+                        if (response != null) {
+                            if (response.code() == 200) {
+                                phoneInfo = response.body()
+                                apiListener.onResponse(response.body())
+                            } else
+                                apiListener.onResponseError(response.code())
+                        }
                     }
-                }
 
-                override fun onFailure(call: Call<PhoneInfo>, t: Throwable?) {
-                    if (t is NoConnectivityException) {
-                        apiListener.onOffline(t.message)
-                    } else {
-                        apiListener.onFailure(t?.localizedMessage.toString())
+                    override fun onFailure(call: Call<PhoneInfo>, t: Throwable?) {
+                        if (t is NoConnectivityException) {
+                            apiListener.onOffline(t.message)
+                        } else {
+                            apiListener.onFailure(t?.localizedMessage.toString())
+                        }
                     }
-                }
-            })
+                })
         }
-    
+
 }

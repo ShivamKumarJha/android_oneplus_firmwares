@@ -14,10 +14,13 @@ object PhoneModelsRepository {
 
     var oneplusPhones: OneplusPhones? = null
 
-    suspend fun getOneplusPhones(apiListener: ApiListener) =
+    suspend fun getOneplusPhones(storeCode: String, apiListener: ApiListener) =
         withContext(Dispatchers.Default) {
-            ApiService.create().getPhoneModels().enqueue(object : Callback<OneplusPhones> {
-                override fun onResponse(call: Call<OneplusPhones>, response: Response<OneplusPhones>?) {
+            ApiService.create().getPhoneModels(storeCode).enqueue(object : Callback<OneplusPhones> {
+                override fun onResponse(
+                    call: Call<OneplusPhones>,
+                    response: Response<OneplusPhones>?
+                ) {
                     if (response != null) {
                         if (response.code() == 200) {
                             oneplusPhones = response.body()
