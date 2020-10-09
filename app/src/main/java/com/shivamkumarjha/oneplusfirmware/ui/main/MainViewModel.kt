@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.shivamkumarjha.oneplusfirmware.model.InfoData
+import com.shivamkumarjha.oneplusfirmware.model.PhoneInfo
 import com.shivamkumarjha.oneplusfirmware.model.OneplusPhones
 import com.shivamkumarjha.oneplusfirmware.network.ApiListener
 import com.shivamkumarjha.oneplusfirmware.network.ResponseState
@@ -51,13 +51,13 @@ class MainViewModel : ViewModel() {
     private val _phonesInfoApiState = MutableLiveData<ResponseState>()
     val phonesInfoApiState: LiveData<ResponseState> = _phonesInfoApiState
 
-    private val _phoneInfo: MutableLiveData<InfoData> = MutableLiveData<InfoData>()
-    val phoneInfo: LiveData<InfoData> = _phoneInfo
+    private val _phoneInfo: MutableLiveData<PhoneInfo> = MutableLiveData<PhoneInfo>()
+    val phoneInfo: LiveData<PhoneInfo> = _phoneInfo
 
     private val phonesInfoApiListener = object : ApiListener {
         override fun onResponse(t: Any?) {
             _phonesInfoApiState.value = ResponseState(isSuccess = true)
-            _phoneInfo.value = t as InfoData
+            _phoneInfo.value = t as PhoneInfo
             _isLoading.value = false
         }
 
