@@ -29,7 +29,8 @@ class PhoneAdapter(private val phoneClickListener: PhoneClickListener) :
     }
 
     fun addInfoData(phone: InfoData) {
-        this.phones.add(phone)
+        phones.add(phone)
+        phones.sortByDescending { it.versionReleaseTime }
         backupList = this.phones
         notifyItemInserted(this.phones.size)
     }
