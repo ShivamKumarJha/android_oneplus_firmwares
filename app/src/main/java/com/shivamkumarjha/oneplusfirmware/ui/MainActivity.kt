@@ -1,7 +1,7 @@
 package com.shivamkumarjha.oneplusfirmware.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.shivamkumarjha.oneplusfirmware.R
 
 class MainActivity : AppCompatActivity() {

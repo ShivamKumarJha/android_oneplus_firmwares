@@ -1,6 +1,10 @@
 package com.shivamkumarjha.oneplusfirmware.network
 
+import com.shivamkumarjha.oneplusfirmware.model.OneplusPhones
+import com.shivamkumarjha.oneplusfirmware.model.PhoneInfo
+import retrofit2.Call
 import retrofit2.Retrofit
+import retrofit2.http.GET
 
 interface ApiService {
 
@@ -15,4 +19,10 @@ interface ApiService {
             return INSTANCE!!
         }
     }
+
+    @GET("find-phone-models")
+    fun getPhoneModels(): Call<OneplusPhones>
+
+    @GET("find-phone-systems")
+    fun getPhoneInfo(): Call<PhoneInfo>
 }

@@ -60,7 +60,8 @@ class RetrofitClient private constructor(
     private fun getOkHTTPClient(cache: Cache): OkHttpClient {
         val client = OkHttpClient.Builder()
         val logging = HttpLoggingInterceptor()
-        val connectivityManager = mContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager =
+            mContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         // set your desired log level
         if (BuildConfig.DEBUG) {
             // development build
