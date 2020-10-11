@@ -62,28 +62,14 @@ class MainActivity : AppCompatActivity() {
     private fun observeData() {
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         mainViewModel.getOneplusPhones(Constants.STORE_CODE)
-        mainViewModel.phonesApiState.observe(this, {
-            when {
-                it.isOffline != null -> {
-                    Utility.get().getSnackBar(
-                        rootLayout,
-                        "Failed! " + it.isOffline,
-                        Snackbar.LENGTH_LONG
-                    ).setBackgroundTint(Color.RED).show()
-                }
-                it.errorMessage != null -> {
-                    Utility.get().debugToast(this, "Failed! " + it.errorMessage)
-                }
-                it.responseCode != null -> {
-                    Utility.get().debugToast(this, "Failed! " + it.responseCode)
-                }
-            }
-        })
         mainViewModel.isLoading.observe(this, {
             if (it)
                 progressDialog.show()
             else
                 progressDialog.dismiss()
+        })
+        mainViewModel.oneplusApiState.observe(this, {
+            Utility.get().apiState(this, rootLayout, it)
         })
         mainViewModel.oneplusPhones.observe(this, {
             if (it != null) {
@@ -100,22 +86,8 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-        mainViewModel.phonesInfoApiState.observe(this, {
-            when {
-                it.isOffline != null -> {
-                    Utility.get().getSnackBar(
-                        rootLayout,
-                        "Failed! " + it.isOffline,
-                        Snackbar.LENGTH_LONG
-                    ).setBackgroundTint(Color.RED).show()
-                }
-                it.errorMessage != null -> {
-                    Utility.get().debugToast(this, "Failed! " + it.errorMessage)
-                }
-                it.responseCode != null -> {
-                    Utility.get().debugToast(this, "Failed! " + it.responseCode)
-                }
-            }
+        mainViewModel.phoneInfoApiState.observe(this, {
+            Utility.get().apiState(this, rootLayout, it)
         })
         mainViewModel.phoneInfo.observe(this, {
             if (it != null) {
